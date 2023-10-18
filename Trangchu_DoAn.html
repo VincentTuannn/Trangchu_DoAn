@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAS Store</title>
+    <script src="https://kit.fontawesome.com/ee40bf749e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./cssDoAn/list.css">
+    <link rel="stylesheet" href="./cssDoAn/topheader.css">
+    <link rel="stylesheet" href="./cssDoAn/bottomheader.css">
+    <link rel="stylesheet" href="./cssDoAn/show.css">
+    <link rel="stylesheet" href="./cssDoAn/home.css">
+</head>
+<body>
+    <div class="all" style="width: 100%; background-color: rgb(222, 225, 230); position: relative;">
+        <header>
+            <div class="top_header">
+                <div class="search-desktop">
+                    <form action="/search" class="search">
+                        <div class="search-inner">
+                            <input class="search-input" type="text" size="20" placeholder="Bạn đang tìm gì..." aria-label="Search">
+                        </div>
+                        <button type="submit" class="btn-search" aria-label="Tìm kiếm">
+                            <img width="24" height="24" src="./image/search.png" alt="Tìm kiếm">
+                        </button>
+                    </form>
+                </div>
+                <div class="menu_header">
+                        <ul>
+                            <li>
+                                <a class="icon_call" href="tel:0353022840">
+                                    <span class="box-icon">    
+                                        <i id="call" class="fa fa-volume-control-phone" aria-hidden="true"></i>                        
+                                    </span>
+                                    <span class="box-text">
+                                        Hotline
+                                        <span class="small-text">0353022840</span>
+                                    </span>        
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon_ggmap" href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank">
+                                    <span class="box-icon">     
+                                        <i id="map" class="fa fa-map-marker" aria-hidden="true"></i>                           
+                                    </span>
+                                    <span class="box-text">
+                                        Hệ thống
+                                    <span class="small-text">Showroom</span>
+                                    </span>        
+                                </a>
+                            </li>
+                            <li>
+                                <span class="box-icon">
+                                    <i id="tracuu" class="fa-solid fa-truck-arrow-right" style="color: white; font-size: 20px;"></i>                                
+                                </span>
+                                <span class="box-text">
+                                    Tra cứu
+                                    <span class="small-text">đơn hàng</span>
+                                </span>        
+                            </li>
+                            <li>
+                                <span class="box-icon"> 
+                                    <i id="cart" class="fa fa-shopping-cart" aria-hidden="true"></i>                             
+                                </span>
+                                <span class="box-text">
+                                    Giỏ hàng
+                                <span class="small-text">Cart</span>
+                                </span> 
+                            </li>
+                            <li>
+                                <button type="submit" class="btn-login">
+                                    <span class="box-icon">                                
+                                    </span>
+                                    <span class="box-text">
+                                        Đăng nhập
+                                    <span class="small-text">Đăng ký</span>
+                                    </span> 
+                                </button>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="bottom_header">
+                <div class="container">
+                    <div class="menu_bottomheader">
+                        DANH MỤC SẢN PHẨM
+                        <span class="box-icon">     
+                            <i id="danhmuc" class="fa fa-bars" aria-hidden="true"></i>                        
+                        </span>
+                    </div>
+                    <nav class="right_bottom_header">
+                        <ul class="bottom_header_transition">
+                            <li>
+                                <span class="box-icon">
+                                    <i id="baohanh" class="fa-regular fa-handshake" style="color: #202124;"></i>
+                                </span>
+                                <span id="menuright_bottom" class="box-text">Chính sách bảo hành</span>
+                            </li>
+                            <li>
+                                <span class="box-icon">
+                                    <i id="khuyenmai" class="fa-solid fa-money-check-dollar" style="color: #202124;"></i>
+                                </span>
+                                <span id="menuright_bottom" class="box-text">Khuyến mãi</span>
+                            </li>
+                            <li>
+                                <span class="box-icon">
+                                    <i id="tragop" class="fa-solid fa-hand-holding-dollar" style="color: #202124;"></i>
+                                </span>
+                                <span id="menuright_bottom" class="box-text">Trả góp</span>
+                            </li>
+                            <li>
+                                <span class="box-icon">
+                                    <i id="tin" class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                </span>
+                                <span id="menuright_bottom" class="box-text">Tin công nghệ</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="TM">
+                    <div style="width: 24%; background-color: whitesmoke;">
+                        <div class="danhmuc">
+                            <div class="MenuC">Trang chủ
+                                
+                                <span class="megamenu-ic-right">
+                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div> 
+                            <div class="MenuC">Desktop
+                                
+                                <span class="megamenu-ic-right">
+                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="MenuC">Laptop
+                                
+                                <span class="megamenu-ic-right">
+                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="MenuC">Trả góp
+                                
+                                <span class="megamenu-ic-right">
+                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="MenuC">Nhu cầu sử dụng
+                                
+                                <span class="megamenu-ic-right">
+                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="MenuC">Tin tức
+                                
+                                <span class="megamenu-ic-right">
+                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="MenuC">Máy tính đã qua sử dụng
+                                <span class="megamenu-ic-right">
+                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_active-tm">
+                        <img style="width: 100%; height: 100%;" src="./image/active-lap.webp"/>
+                    </div>
+                </div>
+            </section>
+            <section class="banner">
+                <div class="container-banner">
+                    <div class="boder-banner-box">
+                        <div style="display: flex;">
+                            <div class="item-banner">
+                                <a href="#">
+                                    <img src="./image/banner1.png" alt="1"/>
+                                </a>
+                            </div>
+                            <div class="item-banner">
+                                <a href="#">
+                                    <img src="./image/banner2.png" alt="2"/>
+                                </a>
+                            </div>
+                            <div class="item-banner">
+                                <a href="#">
+                                    <img src="./image/banner3.png" alt="3"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="logo">
+                <div class="container-logo">
+                    <div>
+                        <div class="d-flex-logo" style="display: flex; justify-content: center; margin-right: 40px;">
+                            <div class="item-banner-hover">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="./image/acer.png" alt="acer">
+                                        <p>Acer</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="./image/asus.png" alt="asus">
+                                        <p>Asus</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="./image/lenovo.png" alt="lenovo">
+                                        <p>Lenovo</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="./image/dell..png" alt="dell">
+                                        <p>Dell</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="./image/hp.png" alt="hp">
+                                        <p>Hewlett-Packard</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="./image/msi.png" alt="msi">
+                                        <p>MSI</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-banner-hover">
+                                <div class="box-cat">
+                                    <a href="#">
+                                        <img src="./image/apple.png" alt="apple">
+                                        <p>Apple</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="show">
+                <div class="container"></div>
+            </div>    
+        </main>
+        <div style="clear: both; height: 120px; background-color: beige;">FOOTER
+        </div>
+    </div>        
+</body>
+</html>
