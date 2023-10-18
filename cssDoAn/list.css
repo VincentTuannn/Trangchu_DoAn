@@ -1,0 +1,47 @@
+.danhmuc{
+    background-color: seashell;
+}
+
+.TM{
+    width: 85%;
+    height: 350px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    text-align: center;
+    line-height: 30px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.MenuC{
+    background-color: whitesmoke;
+    font-size: 17px;
+    display: flex;
+    padding: 10px 38px;
+    position: relative;
+    transition: background-color 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+.fa{
+    position: absolute;
+    font-size: 18px; 
+    top: 8.5px;
+    left: 8.5px; 
+    
+}
+.MenuC:hover {
+    background-color: #ff0000; /* Màu nền khi chỉ trỏ vào */
+}
+.megamenu-ic-right {
+position: absolute;
+top: 0;
+bottom: 0;
+right: 4px;
+margin: auto;
+width: 8px;
+height: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+}

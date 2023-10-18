@@ -1,0 +1,70 @@
+.bottom_header {
+    background-color: white; 
+    height: 50px;
+    text-align: center; /* Căn giữa nội dung theo chiều ngang */
+    line-height: 60px; /* Dòng kẻ cao, để căn giữa theo chiều dọc */
+    box-sizing: border-box;
+}
+.menu_bottomheader{
+    width: 20.5%;
+    height: 50px;
+    margin-top: -10px;
+    margin-left: 120px;
+    background-color: rgb(63, 63, 255);
+    list-style: none;
+}
+
+li{
+    margin-left: 100px;
+    list-style: none;
+    cursor: pointer;
+}
+.bottom_header_transition{
+    width: 69%;
+    height: 50px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -47px;
+}
+[id="danhmuc"]{
+    margin-left: 975px;
+    margin-top: 15px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    left: 152px;
+    top: 77px;
+    font-size: 25px;
+    transform: none;
+}
+/* Quy tắc chung cho các phần tử */
+[id="baohanh"],
+[id="khuyenmai"],
+[id="tragop"],
+[id="tin"] {
+    display: flex;
+    position: absolute;
+    margin-left: -35px;
+    font-size: 20px;
+}
+
+[id="baohanh"] {
+    margin-top: 20px;
+}
+
+[id="khuyenmai"] {
+    margin-top: 20px;
+}
+
+[id="tragop"] {
+    margin-top: 17px;
+}
+
+[id="tin"] {
+    margin-left: 1010px;
+    margin-top: 70px;
+}
+
