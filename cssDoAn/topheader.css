@@ -1,70 +1,83 @@
-/* CSS cho phần header */
 .top_header {
-    background-color: blue; /* Màu nền của header */
-    color: #fff; /* Màu văn bản trong header */
+    background-color: #1877f2;
+    color: #fff;
     width: 100%;
     height: 70px;
     display: flex;
-    padding: 10px; /* Khoảng cách giữa nội dung và viền của header */
+    justify-content: center;
+    align-items: center;
     position: relative;
     box-sizing: border-box;
 }
 
+.logo-header{
+    width: 10%;
+    margin-left: 45px;
+    margin-right: 50px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
 /* CSS cho ô tìm kiếm trong header */
-.search {
+.search-desktop {
+    width: 25%;
+    margin-left: 150px; /* Điều chỉnh khoảng cách từ lề trái */
     display: flex;
     align-items: center;
+    position: relative; /* Để có thể định vị nút tìm kiếm */
+    box-sizing: border-box;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; /* Để có thể định vị nút tìm kiếm */
 }
 
 .search-input {
-    width: 350px; /* Để ô tìm kiếm rộng 100% */
-    height: 25px;
+    width: 350px; 
+    height: 23px;
     border: 1px solid #ccc; /* Để viền ô tìm kiếm */
     border-radius: 5px;
     padding: 10px; /* Điều chỉnh khoảng cách bên trong ô tìm kiếm */
     color: #333; /* Màu văn bản trong ô tìm kiếm */
-    margin-left: 450px;
 }
 
 .btn-search {
-    background-color: rgb(0, 0, 255);
+    background-color: #1877f2; /* Màu nền nút tìm kiếm */
     border-radius: 5px;
-    width: 80px;
-    height: 40px;
+    width: 20%;
+    height: 35px;
     border: none;
     cursor: pointer;
-    margin-left: -83px; /* Khoảng cách giữa ô tìm kiếm và nút tìm kiếm */
+    position: absolute;
+    right: 5px; /* Đặt vị trí từ mép phải */
 }
 
-/* Để đảm bảo ô tìm kiếm nằm giữa header */
-.search-desktop {
-    text-align: center;
-    line-height: 50px;
+.menu_header{
+    width: 65%;
+    margin-left: -25px;
 }
-
-/* CSS cho icon tìm kiếm */
-.btn-search img {
-    width: 42px; /* Kích thước của icon tìm kiếm */
-    height: 25px;
-}
-
-
-/*menu header*/
-.top_header {
-    display: flex; /* Sắp xếp các phần tử bên trong theo chiều ngang */
-    align-items: center; /* Căn các phần tử theo trục dọc (giữa theo chiều cao) */
-}
-
-.menu_header ul {
+.list-menu-header {
     list-style: none; /* Ẩn dấu chấm trước danh sách */
     padding: 10px;
     margin: 15px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+li .box-icon-topmenu{
+    margin-right: 10px;
+}
+
+#color-icon img{
+    filter: brightness(0) invert(1);
+   -webkit-filter: brightness(0) invert(1);
 }
 
 .menu_header ul li {
-    margin: 0 25px; /* Khoảng cách giữa các mục menu */
+    margin: 0 20px; /* Khoảng cách giữa các mục menu */
 }
 
 .menu_header ul li a {
@@ -81,34 +94,10 @@
     border: none;
     cursor: pointer;
 }
-.box-text{
+.menu_header .box-text{
     display: flex;
     flex-direction: column;
 }
-i , [id="call"]{
-    margin-left: 845px;
-    margin-top: 15px;
-    font-size: 25px;
-    transform: rotate(325deg);
-}
-
-i, [id="map"]{
-    margin-left: 975px;
-    margin-top: 17px;
-    font-size: 22px;
-    transform: none;
-}
-i, [id="cart"]{
-    margin-left: 1200px;
-    margin-top: 17px;
-    font-size: 22px;
-    transform: none;
-}
-[id="tracuu"]{
-    display: flex;
-    position: absolute;
-    margin-left: -30px;
-    margin-top: 13px;
-    font-size: 25px;
-    transform: none;
+.icon_call{
+    margin: 10px;
 }

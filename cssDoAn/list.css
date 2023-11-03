@@ -5,6 +5,7 @@
 .TM{
     width: 85%;
     height: 350px;
+    margin-top: 2px;
     margin-bottom: 20px;
     margin-left: 120px;
     text-align: center;
@@ -16,13 +17,25 @@
 .MenuC{
     background-color: whitesmoke;
     font-size: 17px;
+    height: 30px;
     display: flex;
+    align-items: center;
     padding: 10px 38px;
     position: relative;
     transition: background-color 0.3s;
-    position: relative;
     cursor: pointer;
 }
+.MenuC .box-icon{
+    width: 50px;
+}
+
+.list-menu-leftshow{
+    display: flex; 
+    align-items: center; 
+    width: 100%;
+    margin-left: -40px;
+}
+
 .fa{
     position: absolute;
     font-size: 18px; 
@@ -45,3 +58,15 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+.menu_active-tm{
+    border: 1px solid rgb(222, 225, 230);
+    width: 230px;
+    height: 450px;
+    margin-left: 10px;
+    margin-top: 40px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; /* Ẩn phần ảnh bị vượt ra khỏi khung */
+}
+
