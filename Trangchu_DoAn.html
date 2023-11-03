@@ -12,27 +12,35 @@
     <link rel="stylesheet" href="./cssDoAn/bottomheader.css">
     <link rel="stylesheet" href="./cssDoAn/show.css">
     <link rel="stylesheet" href="./cssDoAn/home.css">
+    <link rel="stylesheet" href="./cssDoAn/itembannerbottom.css">
+    <link rel="stylesheet" href="./cssDoAn/sellingproducts.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body>
     <div class="all" style="width: 100%; background-color: rgb(222, 225, 230); position: relative;">
         <header>
             <div class="top_header">
+                <div class="logo-header">
+                    <a href="#">
+                        <img width="240" height="80" src="./image/logo-removebg-preview.png" alt="logo">
+                    </a>
+                </div>
                 <div class="search-desktop">
                     <form action="/search" class="search">
                         <div class="search-inner">
-                            <input class="search-input" type="text" size="20" placeholder="Bạn đang tìm gì..." aria-label="Search">
+                            <input class="search-input" type="text" placeholder="Bạn đang tìm gì..." aria-label="Search">
                         </div>
                         <button type="submit" class="btn-search" aria-label="Tìm kiếm">
-                            <img width="24" height="24" src="./image/search.png" alt="Tìm kiếm">
+                            <img width="30" height="30" src="./image/icon-search.png" alt="Tìm kiếm">
                         </button>
                     </form>
                 </div>
                 <div class="menu_header">
-                        <ul>
-                            <li>
-                                <a class="icon_call" href="tel:0353022840">
-                                    <span class="box-icon">    
-                                        <i id="call" class="fa fa-volume-control-phone" aria-hidden="true"></i>                        
+                        <ul class="list-menu-header">
+                            <li class="list-menu-header-item">
+                                <a class="icon_call" href="tel:0353022840" style="display: flex; align-items: center;">
+                                    <span class="box-icon-topmenu" id="color-icon">								
+                                        <img width="24" height="24" src="https://file.hstatic.net/200000713019/file/phone-call_e079526c31434e4bb169132325cc2600.png" alt="Hotline">
                                     </span>
                                     <span class="box-text">
                                         Hotline
@@ -40,10 +48,10 @@
                                     </span>        
                                 </a>
                             </li>
-                            <li>
-                                <a class="icon_ggmap" href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank">
-                                    <span class="box-icon">     
-                                        <i id="map" class="fa fa-map-marker" aria-hidden="true"></i>                           
+                            <li class="list-menu-header-item">
+                                <a class="icon_ggmap" href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank" style="display: flex; align-items: center;">
+                                    <span class="box-icon-topmenu" id="color-icon">								
+                                        <img width="24" height="24" src="./image/map.png" alt="Hệ thống">
                                     </span>
                                     <span class="box-text">
                                         Hệ thống
@@ -51,29 +59,31 @@
                                     </span>        
                                 </a>
                             </li>
-                            <li>
-                                <span class="box-icon">
-                                    <i id="tracuu" class="fa-solid fa-truck-arrow-right" style="color: white; font-size: 20px;"></i>                                
-                                </span>
-                                <span class="box-text">
-                                    Tra cứu
-                                    <span class="small-text">đơn hàng</span>
-                                </span>        
-                            </li>
-                            <li>
-                                <span class="box-icon"> 
-                                    <i id="cart" class="fa fa-shopping-cart" aria-hidden="true"></i>                             
-                                </span>
-                                <span class="box-text">
-                                    Giỏ hàng
-                                <span class="small-text">Cart</span>
-                                </span> 
-                            </li>
-                            <li>
-                                <button type="submit" class="btn-login">
-                                    <span class="box-icon">                                
+                            <li class="list-menu-header-item">
+                                <a href="#" style="display: flex; align-items: center; width: 95px;">
+                                    <span class="box-icon-topmenu" id="color-icon">								
+                                        <img width="24" height="24" src="./image/donhang.png" alt="Đơn hàng">
                                     </span>
                                     <span class="box-text">
+                                        Tra cứu
+                                        <span class="small-text">đơn hàng</span>
+                                    </span>   
+                                </a>     
+                            </li class="list-menu-header-item">
+                            <li>
+                                <div style="display: flex; align-items: center; width: 95px;">
+                                    <span class="box-icon-topmenu" id="color-icon"> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <span class="box-text">
+                                        Giỏ hàng
+                                    <span class="small-text">Cart</span>
+                                    </span> 
+                                </div>
+                            </li>
+                            <li class="list-menu-header-item">
+                                <button type="submit" class="btn-login" style="width: 95px;">
+                                    <span class="box-text" id="color-icon">
                                         Đăng nhập
                                     <span class="small-text">Đăng ký</span>
                                     </span> 
@@ -85,39 +95,39 @@
             <div class="bottom_header">
                 <div class="container">
                     <div class="menu_bottomheader">
-                        DANH MỤC SẢN PHẨM
-                        <span class="box-icon">     
-                            <i id="danhmuc" class="fa fa-bars" aria-hidden="true"></i>                        
+                        <span class="box-icon" id="danhmuc">     
+                            <img width="30" height="30" src="./image/danhmuc.png" alt="Danh mục">                        
                         </span>
+                        <p>DANH MỤC SẢN PHẨM</p>
                     </div>
-                    <nav class="right_bottom_header">
+                    <div class="right_bottom_header">
                         <ul class="bottom_header_transition">
                             <li>
                                 <span class="box-icon">
                                     <i id="baohanh" class="fa-regular fa-handshake" style="color: #202124;"></i>
                                 </span>
-                                <span id="menuright_bottom" class="box-text">Chính sách bảo hành</span>
+                                <p id="menuright_bottom" class="box-text">Chính sách bảo hành</p>
                             </li>
                             <li>
                                 <span class="box-icon">
                                     <i id="khuyenmai" class="fa-solid fa-money-check-dollar" style="color: #202124;"></i>
                                 </span>
-                                <span id="menuright_bottom" class="box-text">Khuyến mãi</span>
+                                <p id="menuright_bottom" class="box-text">Khuyến mãi</p>
                             </li>
                             <li>
                                 <span class="box-icon">
                                     <i id="tragop" class="fa-solid fa-hand-holding-dollar" style="color: #202124;"></i>
                                 </span>
-                                <span id="menuright_bottom" class="box-text">Trả góp</span>
+                                <p id="menuright_bottom" class="box-text">Trả góp</p>
                             </li>
                             <li>
                                 <span class="box-icon">
                                     <i id="tin" class="fa fa-newspaper-o" aria-hidden="true"></i>
                                 </span>
-                                <span id="menuright_bottom" class="box-text">Tin công nghệ</span>
+                                <p id="menuright_bottom" class="box-text">Tin công nghệ</p>
                             </li>
                         </ul>
-                    </nav>
+                    </div>
                 </div>
             </div>
         </header>
@@ -126,66 +136,115 @@
                 <div class="TM">
                     <div style="width: 24%; background-color: whitesmoke;">
                         <div class="danhmuc">
-                            <div class="MenuC">Trang chủ
-                                
-                                <span class="megamenu-ic-right">
-                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
+                            <div class="MenuC">
+                                <div class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Trang chủ</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
                             </div> 
-                            <div class="MenuC">Desktop
-                                
-                                <span class="megamenu-ic-right">
-                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
+                            <div class="MenuC">
+                                <div class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Desktop</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="MenuC">Laptop
-                                
-                                <span class="megamenu-ic-right">
-                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
+                            <div class="MenuC">
+                                <div class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Laptop</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div> 
                             </div>
-                            <div class="MenuC">Trả góp
-                                
-                                <span class="megamenu-ic-right">
-                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
+                            <div class="MenuC">
+                                <div class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Trả góp</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="MenuC">Nhu cầu sử dụng
-                                
-                                <span class="megamenu-ic-right">
-                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
+                            <div class="MenuC">
+                                <div class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Nhu cầu sử dụng</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="MenuC">Tin tức
-                                
-                                <span class="megamenu-ic-right">
-                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
+                            <div class="MenuC">
+                                <div class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Tin tức</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="MenuC">Máy tính đã qua sử dụng
-                                <span class="megamenu-ic-right">
-                                    <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
+                            <div class="MenuC">
+                                <div class="list-menu-leftshow">
+                                    <span class="box-icon" id=""> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <p id="menuright_bottom" class="box-text">Máy tính đã qua sử dụng</p> 
+                                    <span class="megamenu-ic-right">
+                                        <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="menu_active-tm">
                         <img style="width: 100%; height: 100%;" src="./image/active-lap.webp"/>
                     </div>
+                    <div class="menu_active-tm">
+                        <img style="width: 100%; height: 100%;" src="./image/active-lap2.webp"/>
+                    </div>
+                    <div class="menu_active-tm">
+                        <img style="width: 100%; height: 100%;" src="./image/active-lap3.webp"/>
+                    </div>
+                    <div class="menu_active-tm">
+                        <img style="width: 100%; height: 100%;" src="./image/active-lap4.webp"/>
+                    </div>
+                    <script>
+                        w3.slideshow(".menu_active-tm", 1500);
+                    </script>
+                    
                 </div>
             </section>
             <section class="banner">
@@ -275,12 +334,464 @@
                     </div>
                 </div>
             </section>
+            <div class="item-banner-bottom">
+                <div class="container">
+                    <div class="box-item-show">
+                        <a href="#">
+                            <img src="./image/itembannerbottom.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="box-item-show">
+                        <a href="#">
+                            <img src="./image/itembannerbottom2.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="box-item-show">
+                        <a href="#">
+                            <img src="./image/itembannerbottom3.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="box-item-show">
+                        <a href="#">
+                            <img src="./image/itembannerbottom4.webp" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="selling-show">
+                <div class="border-title-selling">
+                    <div class="title-selling">
+                        <div class="laptop-banchay">
+                            <a href="#">
+                                <p>Laptop bán chạy</p>
+                            </a>
+                        </div>
+                        <hr class="title-divider">
+                        <div class="mienphi-giaohang">
+                            <i class="fa fa-truck" aria-hidden="true" id="icon"></i>
+                            <p>Miễn phí giao hàng</p>
+                        </div>
+                        <div class="list-tenhang">
+                            <div>
+                                <a href="#">
+                                  <p>Acer</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Asus</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Lenovo</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Dell</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                <p>Hewlett-Packard</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>MSI</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Apple</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="selling-products">
+                    <div class="item-selling-products">
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products2.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products3.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products4.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products5.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products2.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products3.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products4.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-show">
+                                <a href="#">
+                                    <img src="./image/selling-products5.webp">
+                                </a>
+                                <div class="detial">
+                                    <h3 class="name">
+                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                    </h3>
+                                    <div class="technical">
+                                        <div class="cpu">
+                                            <span>i5-1340P</span>
+                                        </div>
+                                        <div class="vga">
+                                            <span>Onboard</span>
+                                        </div>
+                                        <div class="ram">
+                                            <span>16 GB</span>
+                                        </div>
+                                        <div class="ssd">
+                                            <span>256 GB</span>
+                                        </div>
+                                        <div class="lcd">
+                                            <span>14 inch FHD+ IPS</span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <div class="price--compare"><del>32.490.000₫</del></div>
+                                        <div class="price--default">
+                                            <span class="price--highlight">25.490.000₫</span>
+                                            <span class="label--on-sale">-21%</span>			
+                                        </div>
+                                    </div>
+                                    <div class="rating"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
             <div class="show">
-                <div class="container"></div>
             </div>    
         </main>
         <div style="clear: both; height: 120px; background-color: beige;">FOOTER
         </div>
-    </div>        
+    </div>  
 </body>
 </html>
