@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="./cssDoAn/home.css">
     <link rel="stylesheet" href="./cssDoAn/itembannerbottom.css">
     <link rel="stylesheet" href="./cssDoAn/sellingproducts.css">
+    <link rel="stylesheet" href="./cssDoAn/dangnhap_header.css">
+    <link rel="stylesheet" href="./cssDoAn/responsivelayout.css">
     <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body>
-    <div class="all" style="width: 100%; background-color: rgb(222, 225, 230); position: relative;">
+    <div class="all" style="width: 100%; background-color: rgb(222, 225, 230); position: absolute; top: 0; left: 0; ">
         <header>
             <div class="top_header">
                 <div class="logo-header">
@@ -60,7 +62,7 @@
                                 </a>
                             </li>
                             <li class="list-menu-header-item">
-                                <a href="#" style="display: flex; align-items: center; width: 95px;">
+                                <a href="#" style="display: flex; align-items: center; width: 105px;">
                                     <span class="box-icon-topmenu" id="color-icon">								
                                         <img width="24" height="24" src="./image/donhang.png" alt="Đơn hàng">
                                     </span>
@@ -71,7 +73,7 @@
                                 </a>     
                             </li class="list-menu-header-item">
                             <li>
-                                <div style="display: flex; align-items: center; width: 95px;">
+                                <div style="display: flex; align-items: center; width: 100px;">
                                     <span class="box-icon-topmenu" id="color-icon"> 
                                         <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
                                     </span>
@@ -82,13 +84,52 @@
                                 </div>
                             </li>
                             <li class="list-menu-header-item">
-                                <button type="submit" class="btn-login" style="width: 95px;">
+                                <button type="submit" class="btn-login" id="button-login" style="width: 95px;">
                                     <span class="box-text" id="color-icon">
                                         Đăng nhập
                                     <span class="small-text">Đăng ký</span>
                                     </span> 
                                 </button>
                             </li>
+                            <div>
+                                <div class="login-popup" id="login-popup">
+                                </div>
+                                <div class="login-content" id="login-content">
+                                    <div class="formdangnhap">
+                                        <!-- Nội dung của cửa sổ đăng nhập ở đây -->
+                                        <!-- Bạn có thể thêm các trường nhập, nút Đăng nhập, và nội dung khác -->
+                                        <div class="dangnhaptxt">
+                                            <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
+                                            <p>Nhập email và mật khẩu của bạn:</p>
+                                        </div>
+                                        <div>
+                                            <form id="customer_login">
+                                                <div class="form-control">
+                                                    <input type="email" placeholder="Email" name="customer[email]">
+                                                </div>
+                                                <div class="form-control" bis_skin_checked="1">
+                                                    <input type="password" placeholder="Mật khẩu" name="customer[password]">
+                                                </div>
+                                                <div class="form-control" bis_skin_checked="1">
+                                                    <button type="submit" class="btn-submit" id="form_submit-login">Đăng nhập</button>
+                                                </div>
+                                                </form>
+                                            <div class="account-actions">
+                                                <p>  
+                                                    Khách hàng mới?
+                                                    <a href="#">Tạo tài khoản</a>
+                                                </p>
+                                                <p>
+                                                    Quên mật khẩu?
+                                                    <a href="#">
+                                                        Khôi phục mật khẩu
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </ul>
                 </div>
             </div>
@@ -792,6 +833,8 @@
         </main>
         <div style="clear: both; height: 120px; background-color: beige;">FOOTER
         </div>
-    </div>  
+    </div>
+    <!--JavaScript--> 
+    <script src="./js/login_header.js"></script>
 </body>
 </html>

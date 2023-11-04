@@ -24,6 +24,7 @@
     margin-left: 150px; /* Điều chỉnh khoảng cách từ lề trái */
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     position: relative; /* Để có thể định vị nút tìm kiếm */
     box-sizing: border-box;
 }
@@ -57,12 +58,14 @@
 
 .menu_header{
     width: 65%;
+    display: flex;
+    justify-content: flex-end;
     margin-left: -25px;
 }
 .list-menu-header {
     list-style: none; /* Ẩn dấu chấm trước danh sách */
     padding: 10px;
-    margin: 15px;
+    margin: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,4 +103,7 @@ li .box-icon-topmenu{
 }
 .icon_call{
     margin: 10px;
+}
+header {
+    font-family: "Mulish",sans-serif!important;
 }
