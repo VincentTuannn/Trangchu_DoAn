@@ -19,12 +19,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.item {
-    position: relative;
-    width: calc(20% - 10px); /* Đặt chiều rộng của mỗi sản phẩm và tạo khoảng cách giữa chúng */
-    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
-}
-
 
 .item-show {
     border: 1px solid rgb(222, 225, 230);
@@ -32,6 +26,8 @@
     border-radius: 5px;
     z-index: 2;
     position: relative;
+    width: calc(20% - 20px); /* Đặt chiều rộng của mỗi sản phẩm và tạo khoảng cách giữa chúng */
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
     overflow: hidden;
 }
 
@@ -190,7 +186,6 @@
     font-family: "SF Pro Display", 'Arial', sans-serif;
     box-sizing: border-box;
 }
-
 
 
 

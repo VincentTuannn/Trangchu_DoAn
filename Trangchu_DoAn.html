@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./cssDoAn/listlaptop.css">
     <link rel="stylesheet" href="./cssDoAn/listncsd.css">
     <link rel="stylesheet" href="./cssDoAn/listdaquasudung.css">
+    <script src="./js/script[1].js"></script>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body>
@@ -32,9 +33,9 @@
                     </a>
                 </div>
                 <div class="search-desktop">
-                    <form action="/search" class="search">
+                    <form class="search">
                         <div class="search-inner">
-                            <input class="search-input" type="text" placeholder="Bạn đang tìm gì..." aria-label="Search">
+                            <input class="search-input" id="search" type="text" placeholder="Bạn đang tìm gì..." aria-label="Search">
                         </div>
                         <button type="submit" class="btn-search" aria-label="Tìm kiếm">
                             <img width="30" height="30" src="./image/icon-search.png" alt="Tìm kiếm">
@@ -75,8 +76,8 @@
                                         <span class="small-text">đơn hàng</span>
                                     </span>   
                                 </a>     
-                            </li class="list-menu-header-item">
-                            <li>
+                            </li>
+                            <li class="list-menu-header-item">
                                 <div id="button-cart" style="display: flex; align-items: center; width: 100px;">
                                     <span class="box-icon-topmenu" id="color-icon"> 
                                         <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
@@ -161,7 +162,7 @@
                                             <div class="account-actions">
                                                 <p>  
                                                     Khách hàng mới?
-                                                    <a href="#">Tạo tài khoản</a>
+                                                    <a href="./login.html">Tạo tài khoản</a>
                                                 </p>
                                                 <p>
                                                     Quên mật khẩu?
@@ -592,379 +593,41 @@
                     </div>
                 </div>
                 <div class="selling-products">
-                    <div class="item-selling-products">
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
+                    <div class="item-selling-products" id="item-selling-products">
+                        <div class="item-show"> <!--Có thể xóa phần này-->
+                            <a href="#">
+                                <img src="./image/selling-products.webp">
+                            </a>
+                            <div class="detial">
+                                <h3 class="name" id="name">
+                                    <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                </h3>
+                                <div class="technical">
+                                    <div class="cpu">
+                                        <span>i5-1340P</span>
                                     </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
+                                    <div class="vga">
+                                        <span>Onboard</span>
                                     </div>
-                                    <div class="rating"></div>
+                                    <div class="ram">
+                                        <span>16 GB</span>
+                                    </div>
+                                    <div class="ssd">
+                                        <span>256 GB</span>
+                                    </div>
+                                    <div class="lcd">
+                                        <span>14 inch FHD+ IPS</span>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <div class="price--compare"><del>32.490.000₫</del></div>
+                                    <div class="price--default">
+                                        <span class="price--highlight">25.490.000₫</span>
+                                        <span class="label--on-sale">-21%</span>			
+                                    </div>
                                 </div>
                             </div>
-                            
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products2.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products3.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products4.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products5.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products2.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products3.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products4.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-show">
-                                <a href="#">
-                                    <img src="./image/selling-products5.webp">
-                                </a>
-                                <div class="detial">
-                                    <h3 class="name">
-                                        <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
-                                    </h3>
-                                    <div class="technical">
-                                        <div class="cpu">
-                                            <span>i5-1340P</span>
-                                        </div>
-                                        <div class="vga">
-                                            <span>Onboard</span>
-                                        </div>
-                                        <div class="ram">
-                                            <span>16 GB</span>
-                                        </div>
-                                        <div class="ssd">
-                                            <span>256 GB</span>
-                                        </div>
-                                        <div class="lcd">
-                                            <span>14 inch FHD+ IPS</span>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <div class="price--compare"><del>32.490.000₫</del></div>
-                                        <div class="price--default">
-                                            <span class="price--highlight">25.490.000₫</span>
-                                            <span class="label--on-sale">-21%</span>			
-                                        </div>
-                                    </div>
-                                    <div class="rating"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -979,5 +642,7 @@
     <script src="./js/cart_header.js"></script>
     <script src="./js/listactive.js"></script> 
     <script src="./js/listdaquasudung.js"></script>
+    <script src="./js/ArrayListShow.js"></script>
+    <script src="./js/search.js"></script>
 </body>
 </html>
