@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./cssDoAn/listdaquasudung.css">
     <script src="./js/script[1].js"></script>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
-</head>
+</head>ư
 <body>
     <div class="all" id="all" style="width: 100%; background-color: rgb(222, 225, 230); position: absolute; top: 0; left: 0; ">
         <header>
@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <div class="search-desktop">
-                    <form class="search">
+                    <form class="search" onsubmit="return handleSearchFileresult()">
                         <div class="search-inner">
                             <input class="search-input" id="search" type="text" placeholder="Bạn đang tìm gì..." aria-label="Search">
                         </div>
@@ -599,8 +599,8 @@
                                 <img src="./image/selling-products.webp">
                             </a>
                             <div class="detial">
-                                <h3 class="name" id="name">
-                                    <a href="#" title="Laptop LG Gram 2023 14Z90R GAH53A5" tabindex="0">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                <h3 class="name-product">
+                                    <a id="name" href="#">Laptop LG Gram 2023 14Z90R GAH53A5</a>
                                 </h3>
                                 <div class="technical">
                                     <div class="cpu">
@@ -643,6 +643,5 @@
     <script src="./js/listactive.js"></script> 
     <script src="./js/listdaquasudung.js"></script>
     <script src="./js/ArrayListShow.js"></script>
-    <script src="./js/search.js"></script>
 </body>
 </html>

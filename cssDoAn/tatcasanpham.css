@@ -1,31 +1,31 @@
-/*CSS của trang kết quả tìm kiếm*/
-.selling-show-search{
-    width: 100%;
-    position: absolute; top: 0; left: 0;
-    background-color: rgb(222, 225, 230);
+.filter-div{
+    background-color: white;
+    width: 85%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.filter-div{
+    display: flex;
+    justify-content: space-between; 
+}
+.filter-item{
+    padding: 0px 0 0 15px;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 0;
+    width: 15%;
+    border: 1px solid rgb(222, 225, 230);
+    padding: 14px;
+    margin: 10px;
+    justify-content: space-between;
    
 }
-.container-search-products{
-    background-color: white; 
-    width: 85%;  
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-left: 120px;
-}
 
-/*CSS trang chính*/
-.selling-show{
-    width: 85%;
-    background-color: white;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-left: 120px;
-}
 
 .selling-products {
-    width: 98%;
+    width: 85%;
+    background-color: wheat;
     position: relative; 
-    margin: auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -34,12 +34,16 @@
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: space-between;
+    z-index: 100;
+}
+.item-selling-products .item-show{
+    margin-top: 500px;
 }
 
 .item-show {
-    border: 1px solid rgb(222, 225, 230);
-    width: 100%;
+    border: 1px solid rgb(15, 56, 126);
+    width: 100%;    
     border-radius: 5px;
     z-index: 2;
     position: relative;
@@ -64,6 +68,7 @@
 .border-title-selling{
     width: 100% ;
     height: 70px;
+    margin-bottom: 100px;
    
     
 }
@@ -158,19 +163,17 @@
     border-radius: 4px;
     color: #6D6E72;
     font-size: 12px;
-    padding: 5px 8px;
+    padding: 4px 8px;
     margin-bottom: 8px;
-    margin-left: 19px;
-    padding-left: 8px;
     display: flex;
     flex-wrap: wrap;
     margin-right: 20px;
     box-sizing: border-box;
 }
-.name-product{
+.name{
     margin-bottom: 10px;
 }
-.name-product a{
+.name a{
     text-decoration: none;
     color: #000;
 }
@@ -204,10 +207,6 @@
     width: 100%;
     font-family: "SF Pro Display", 'Arial', sans-serif;
     box-sizing: border-box;
-}
-.detail .name-product{
-    align-items: center;
-    text-align: center;
 }
 
 
