@@ -3,14 +3,14 @@
     width: 100%;
     position: absolute; top: 0; left: 0;
     background-color: rgb(222, 225, 230);
+    padding: 30px 0px;
    
 }
 .container-search-products{
     background-color: white; 
     width: 85%;  
     border-radius: 5px;
-    margin-bottom: 10px;
-    margin-left: 120px;
+    margin: auto;
 }
 
 /*CSS trang chính*/
@@ -210,7 +210,103 @@
     text-align: center;
 }
 
+/*CSS nút chuyển trang*/
+#pagenumber {
+    background-color: #FFFF00;
+    width: 100%;
+    border: #996600 solid 2px;
+    height: 45px;
+    display: inline-table;
+    
+}
+.pagination-btn {
+    display: flex;
+    height: 40px;
+    padding: 8px;
+    margin: 4px;
+    cursor: pointer;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    background-color: #0000FF;
+    text-align: center;
+    width: 100%;
+}
 
+.pagination-btn.active {
+    background-color: wheat; /* Change this to your desired color */
+    color: white;
+}
+.pagination-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #0000FF;
+}
+
+.pagination-btn.active {
+    background-color: wheat; /* Change this to your desired color */
+    color: white;
+}
+
+/*CSS lọc sản phẩm*/
+.filterproducts{
+    width: 85%;
+    background-color: red;
+    margin: auto;
+}
+.container-filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+.container-filter .title{
+    width: 20%;
+    height: 35px;
+    list-style: none;
+    margin: 10px 10px;
+    border: 1px solid rgb(222, 225, 230);
+}
+.container-filter .title p{
+    margin: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.filterproducts .container-filter .title .item-checkbox :after{
+    content: "+";
+    font-size: 20px;
+}
+/*CSS cho ô bên trong filter*/
+.group-filter{
+    position: absolute;
+    width: 14%;
+    z-index: 99;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0;
+    display: none;
+    border-top: 0;
+    padding: 10px;
+    box-shadow: 0 3px 6px -2px #888;
+    transition: 0.3s ease-in-out;
+}
+li label{
+    display: flex;    /*CSS cho danh sách bên trong nút lọc*/
+}
+.listcheckbox{
+    display: contents;
+}
+.group-filter .layer-content .listcheckbox li , label{
+    list-style: none;
+    margin: 12px 0px;
+    cursor: pointer;
+    font-size: 14px;
+}
 
 
 
