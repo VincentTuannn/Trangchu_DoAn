@@ -1,4 +1,3 @@
-
 function handleeFilterFileresult(filterTerm) {
     // Lấy giá trị từ thuộc tính 'value'
     var filterValue = filterTerm.getAttribute('value');
@@ -6,6 +5,14 @@ function handleeFilterFileresult(filterTerm) {
     // Thêm giá trị vào mảng filtertest
    //Đã thêm vào local nên ẩn dòng này đi var filtertest = JSON.parse(localStorage.getItem('filtertest')) || [];
     filtertest.push(filterValue);
+    console.log(filtertest.length);
+    var index = filtertest.length;
+    if (index > 1) {
+        // Xóa phần tử đầu tiên khỏi mảng (vì chỉ cho mảng chứa 2 phần tử nên sẽ xóa phần tử đầu tiên)
+        filtertest.splice(0, 1);
+    }
+    //Cập nhật lại filtertest vào Local Storage sau khi đã xóa phần tử
+    localStorage.setItem('filtertest', JSON.stringify(filtertest));
      // Lưu mảng filtertest vào localStorage
    //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('filtertest', JSON.stringify(filtertest));
      // Lưu mảng storedArray vào localStorage
@@ -13,12 +20,8 @@ function handleeFilterFileresult(filterTerm) {
     // Hiển thị giá trị filtertest trong console
     console.log(filtertest);
     console.log(storedArray);
-
-    // Gọi hàm ListSellingProducts với các filter
-    ListSellingProducts(storedArray, filterValue);
     // Chuyển hướng trang sau khi xử lý xong dữ liệu
     window.location.href = `ResultSearch.html?filterTerm=${filterValue}`;
-
     return false; // Ngăn chặn việc gửi biểu mẫu
 }
 
