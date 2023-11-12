@@ -12,6 +12,14 @@
     border-radius: 5px;
     margin: auto;
 }
+.detail div{
+    margin: 0px 15px;
+    line-height: 20px;
+}
+.detail .price{
+    margin-left: 8%;
+    margin-bottom: 15px;
+}
 
 /*CSS trang chính*/
 .selling-show{
@@ -31,6 +39,7 @@
     flex-wrap: wrap;
 }
 .item-selling-products{
+    width: 100%;
     display: flex;
     position: relative;
     flex-wrap: wrap;
@@ -39,11 +48,11 @@
 
 .item-show {
     border: 1px solid rgb(222, 225, 230);
-    width: 100%;
+    width: 19%;
+    margin-bottom: 10px;
     border-radius: 5px;
     z-index: 2;
-    position: relative;
-    width: calc(20% - 20px); /* Đặt chiều rộng của mỗi sản phẩm và tạo khoảng cách giữa chúng */
+    position: relative;  
     margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
     overflow: hidden;
 }
