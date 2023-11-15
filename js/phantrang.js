@@ -24,8 +24,6 @@ function showPage() {
     renderPagination();
 }
 
-// ... (your existing JavaScript code)
-
 function renderPagination() {
     const totalItems = document.getElementsByClassName('item-show').length;
     const totalPages = Math.ceil(totalItems / itemsPerPage);

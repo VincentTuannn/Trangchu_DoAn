@@ -3,11 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <title>Kết quả tìm kiếm</title>
+    <link rel="stylesheet" href="./cssDoAn/list.css">
+    <link rel="stylesheet" href="./cssDoAn/topheader.css">
+    <link rel="stylesheet" href="./cssDoAn/bottomheader.css">
+    <link rel="stylesheet" href="./cssDoAn/itembannerbottom.css">
     <link rel="stylesheet" href="./cssDoAn/sellingproducts.css">
+    <link rel="stylesheet" href="./cssDoAn/dangnhap_header.css">
+    <link rel="stylesheet" href="./cssDoAn/cart_header.css">
 </head>
 <body>
     <div class="selling-show-search">
-        <div class="filterproducts">
+        <header>
+            <div class="top_header">
+                <div class="logo-header">
+                    <a href="#">
+                        <img width="240" height="80" src="./image/logo-removebg-preview.png" alt="logo">
+                    </a>
+                </div>
+                <div class="search-desktop">
+                    <form class="search" onsubmit="return handleSearchFileresult()">
+                        <div class="search-inner">
+                            <input class="search-input" id="search" type="text" placeholder="Bạn đang tìm gì..." aria-label="Search">
+                        </div>
+                        <button type="submit" class="btn-search" aria-label="Tìm kiếm">
+                            <img width="30" height="30" src="./image/icon-search.png" alt="Tìm kiếm">
+                        </button>
+                    </form>
+                </div>
+                <div class="menu_header">
+                        <ul class="list-menu-header">
+                            <li class="list-menu-header-item">
+                                <a class="icon_call" href="tel:0353022840" style="display: flex; align-items: center;">
+                                    <span class="box-icon-topmenu" id="color-icon">								
+                                        <img width="24" height="24" src="https://file.hstatic.net/200000713019/file/phone-call_e079526c31434e4bb169132325cc2600.png" alt="Hotline">
+                                    </span>
+                                    <span class="box-text">
+                                        Hotline
+                                        <span class="small-text">0353022840</span>
+                                    </span>        
+                                </a>
+                            </li>
+                            <li class="list-menu-header-item">
+                                <a class="icon_ggmap" href="https://maps.app.goo.gl/s9gDSUJW9wrHKShE8" target="_blank" style="display: flex; align-items: center;">
+                                    <span class="box-icon-topmenu" id="color-icon">								
+                                        <img width="24" height="24" src="./image/map.png" alt="Hệ thống">
+                                    </span>
+                                    <span class="box-text">
+                                        Hệ thống
+                                    <span class="small-text">Showroom</span>
+                                    </span>        
+                                </a>
+                            </li>
+                            <li class="list-menu-header-item">
+                                <a href="#" style="display: flex; align-items: center; width: 105px;">
+                                    <span class="box-icon-topmenu" id="color-icon">								
+                                        <img width="24" height="24" src="./image/donhang.png" alt="Đơn hàng">
+                                    </span>
+                                    <span class="box-text">
+                                        Tra cứu
+                                        <span class="small-text">đơn hàng</span>
+                                    </span>   
+                                </a>     
+                            </li>
+                            <li class="list-menu-header-item">
+                                <div id="button-cart" style="display: flex; align-items: center; width: 100px;">
+                                    <span class="box-icon-topmenu" id="color-icon"> 
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                    </span>
+                                    <span class="box-text">
+                                        Giỏ hàng
+                                    <span class="small-text">Cart</span>
+                                    </span> 
+                                </div>
+                            </li>
+                            <div class="form-cart-container" id="test">
+                                <div class="login-popup-cart" id="login-popup-cart">
+                                </div>
+                                <div class="login-content-cart" id="login-content-cart">
+                                    <div class="formcart">
+                                        <!-- Nội dung của cửa sổ đăng nhập ở đây -->
+                                        <!-- Bạn có thể thêm các trường nhập, nút Đăng nhập, và nội dung khác -->
+                                        <div class="giohangtxt">
+                                            <h2>GIỎ HÀNG</h2>
+                                        </div>
+                                        <div>
+                                            <div id="customer_cart">
+                                                <div class="icon-cart">
+                                                    <img width="60" height="60" src="./image/giohang.png">
+                                                </div>
+                                                <p>Hiện chưa có sản phẩm</p>
+                                            </div>
+                                            <span class="line"></span>
+                                            <div class="total">
+                                                <div class="totaltxt">
+                                                    <div class="text-left-total"><p>TỔNG TIỀN</p></div>
+                                                    <div class="text-right-total" id="total-view-cart"><p>0đ</p></div>
+                                                </div>
+                                                <div class="button-total">
+                                                    <button class="btn-left" id="button-left">
+                                                        <span class="box-text"> 
+                                                            XEM GIỎ HÀNG
+                                                        </span>
+                                                    </button>
+                                                    <button class="btn-right" id="button-right">
+                                                        <span class="box-text">
+                                                            THANH TOÁN
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <li class="list-menu-header-item">
+                                <button type="submit" class="btn-login" id="button-login" style="width: 95px;">
+                                    <span class="box-text" id="color-icon">
+                                        Đăng nhập
+                                    <span class="small-text">Đăng ký</span>
+                                    </span> 
+                                </button>
+                            </li>
+                            <div>
+                                <div class="login-popup" id="login-popup">
+                                </div>
+                                <div class="login-content" id="login-content">
+                                    <div class="formdangnhap">
+                                        <!-- Nội dung của cửa sổ đăng nhập ở đây -->
+                                        <!-- Bạn có thể thêm các trường nhập, nút Đăng nhập, và nội dung khác -->
+                                        <div class="dangnhaptxt">
+                                            <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
+                                            <p>Nhập email và mật khẩu của bạn:</p>
+                                        </div>
+                                        <div>
+                                            <form id="customer_login">
+                                                <div class="form-control">
+                                                    <input type="email" placeholder="Email" name="customer[email]">
+                                                </div>
+                                                <div class="form-control" bis_skin_checked="1">
+                                                    <input type="password" placeholder="Mật khẩu" name="customer[password]">
+                                                </div>
+                                                <div class="form-control" bis_skin_checked="1">
+                                                    <button type="submit" class="btn-submit" id="form_submit-login">Đăng nhập</button>
+                                                </div>
+                                                </form>
+                                            <div class="account-actions">
+                                                <p>  
+                                                    Khách hàng mới?
+                                                    <a href="./login.html">Tạo tài khoản</a>
+                                                </p>
+                                                <p>
+                                                    Quên mật khẩu?
+                                                    <a href="#">
+                                                        Khôi phục mật khẩu
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                </div>
+            </div>
+            <div class="bottom_header">
+                <div class="container">
+                    <div class="menu_bottomheader">
+                        <span class="box-icon" id="danhmuc">     
+                            <img width="30" height="30" src="./image/danhmuc.png" alt="Danh mục">                        
+                        </span>
+                        <p>DANH MỤC SẢN PHẨM</p>
+                    </div>
+                    <div class="right_bottom_header">
+                        <ul class="bottom_header_transition">
+                            <li>
+                                <span class="box-icon">
+                                    <i id="baohanh" class="fa-regular fa-handshake" style="color: #202124;"></i>
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Chính sách bảo hành</p>
+                            </li>
+                            <li>
+                                <span class="box-icon">
+                                    <i id="khuyenmai" class="fa-solid fa-money-check-dollar" style="color: #202124;"></i>
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Khuyến mãi</p>
+                            </li>
+                            <li>
+                                <span class="box-icon">
+                                    <i id="tragop" class="fa-solid fa-hand-holding-dollar" style="color: #202124;"></i>
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Trả góp</p>
+                            </li>
+                            <li>
+                                <span class="box-icon">
+                                    <i id="tin" class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                </span>
+                                <p id="menuright_bottom" class="box-text">Tin công nghệ</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+      <!--  <div class="filterproducts">
             <ul class="container-filter">
                 <li id="filterthuonghieu" class="title">
                     <div class="item-checkbox" id="item-thuonghieu">
@@ -206,9 +404,10 @@
                     </div>
                 </li>
             </ul>  
-        </div>
+        </div> -->
+        <h1>Tìm kiếm</h1>
+        <div id="search-result"></div>
         <div class="container-search-products">
-            <h1>Kết quả tìm kiếm</h1>
             <div class="selling-products">
                 <div class="item-selling-products" id="item-selling-products">  
                 </div>
@@ -216,8 +415,12 @@
             </div>
         </div>
     </div>
+    <script src="./js/login_header.js"></script>
+    <script src="./js/cart_header.js"></script>
     <script src="./js/ListSearchProducts.js"></script>
     <script src="./js/filterproducts.js"></script>
+    <script src="./js/ListFilterProducts.js"></script>
+
   
 </body>
 </html>

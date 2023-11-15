@@ -1,7 +1,21 @@
 function handleeFilterFileresult(filterTerm) {
+    const filter = {
+        brand: null,
+        price: null,
+        cpu: null,
+        vga: null,
+    };
     // Lấy giá trị từ thuộc tính 'value'
     var filterValue = filterTerm.getAttribute('value');
     filterValue = filterValue.toString();
+    //So sánh mảng các mục cần tìm
+    if (['1', '2', '3', '4'].includes(filterValue)) {
+        filter.price = filterValue;
+    } else if (['ASUS', 'ACER', 'MSI', 'LENOVO', 'DELL', 'HP', 'LG'].includes(filterValue)) {
+        filter.brand = filterValue;
+    }else if (['Intel Core i3', 'Intel Core i5', 'Intel Core i7', 'Intel Core i9', 'ADM Ryzen', 'Xeon'].includes(filterValue)) {
+        filter.cpu = filterValue;
+    }
     // Thêm giá trị vào mảng filtertest
    //Đã thêm vào local nên ẩn dòng này đi var filtertest = JSON.parse(localStorage.getItem('filtertest')) || [];
     filtertest.push(filterValue);
@@ -14,23 +28,31 @@ function handleeFilterFileresult(filterTerm) {
     //Cập nhật lại filtertest vào Local Storage sau khi đã xóa phần tử
     localStorage.setItem('filtertest', JSON.stringify(filtertest));
      // Lưu mảng filtertest vào localStorage
-   //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('filtertest', JSON.stringify(filtertest));
-     // Lưu mảng storedArray vào localStorage
-   //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('ArrayListProducts', JSON.stringify(storedArray));
-    // Hiển thị giá trị filtertest trong console
+     localStorage.setItem('filter', JSON.stringify(filter));
+     //Cập nhật lại filtertest vào Local Storage sau khi đã xóa phần tử
+     localStorage.setItem('filtertest', JSON.stringify(filtertest));
+      // Lưu mảng filtertest vào localStorage
+    //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('filtertest', JSON.stringify(filtertest));
+      // Lưu mảng storedArray vào localStorage
+    //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('ArrayListProducts', JSON.stringify(storedArray));
+     // Hiển thị giá trị filtertest trong console
+ 
     console.log(filtertest);
     console.log(storedArray);
     // Chuyển hướng trang sau khi xử lý xong dữ liệu
     window.location.href = `ResultSearch.html?filterTerm=${filterValue}`;
     return false; // Ngăn chặn việc gửi biểu mẫu
 }
-
+//Lấy giá trị mảng sản phẩm từ LocalStorage
 const storedJsonString = localStorage.getItem('ArrayListProducts');
-
 // Chuyển đổi chuỗi JSON thành mảng
 const storedArray = JSON.parse(storedJsonString);
 // Lấy giá trị filter từ localStorage
 const filtertest = JSON.parse(localStorage.getItem('filtertest'));
+//Lấy giá trị của hàm filter từ local
+const storedJsonfilterString = localStorage.getItem('filter');
+const filterarr = JSON.parse(storedJsonfilterString);
+
  console.log(filtertest);
 // Gọi hàm ListSellingProducts với các filter
 ListSellingProducts(storedArray, filtertest);
@@ -52,9 +74,29 @@ function ListSellingProducts(storedArray, filtertest = []) {
         var labelonsale = product.labelonsale;
 
         // Kiểm tra điều kiện lọc, nếu filterValue không rỗng thì thực hiện lọc
-        if (filtertest.length > 0 && !filtertest.includes(thuonghieu)) {
-            continue;
+        if(filterarr.brand){
+            if (!filtertest.includes(thuonghieu)) {
+                continue;
+            }
         }
+         // Kiểm tra điều kiện lọc giá
+        if(filterarr.price)         //Dùng filtertest hay filterarr.{Gía trị cần lọc} đều được
+        {
+            if (pricehighlight < 10000000 && !filtertest.includes('1')) continue;
+            if (pricehighlight >= 10000000 && pricehighlight <= 15000000 && !filtertest.includes('2')) continue;
+            if (pricehighlight > 15000000 && pricehighlight <= 25000000 && !filtertest.includes('3')) continue;
+            if (pricehighlight > 25000000 && !filtertest.includes('4')) continue;
+        }
+        if (filterarr.cpu) {
+            if(!filtertest.includes(cpu))
+              continue;
+         }
+ 
+         if (filterarr.vga) {
+             if(filtervga.includes(vga) == false)
+               continue;
+          }
+ 
 
 
         s += `

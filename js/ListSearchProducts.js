@@ -212,6 +212,12 @@ const ArrayListProducts = [
 /*Hàm gọi đến trang kết quả tìm kiếm*/ 
 function handleSearchFileresult() {
     const searchTerm = document.getElementById('search').value;
+    filterValue1 = searchTerm.toString();
+    var filtertest1 = [];
+    // Thêm giá trị vào mảng filtertest
+    // Đã thêm vào local nên ẩn dòng này đi var filtertest = JSON.parse(localStorage.getItem('filtertest')) || [];
+    filtertest1.push(filterValue1);
+    localStorage.setItem('filtertest1', JSON.stringify(filtertest1));
     window.location.href = `testketquatimkiem.html?searchTerm=${searchTerm}`;
     return false; // Ngăn chặn việc gửi biểu mẫu
 }
@@ -275,16 +281,27 @@ function ListSellingProducts(ArrayListProducts) {
     document.getElementById("item-selling-products").innerHTML = s;
 }
 
-
 const urlParams = new URLSearchParams(window.location.search);
 const searchTerm = urlParams.get('searchTerm');
+
+function displaySearchResultMessage(searchTerm) {
+    document.getElementById('search-result-message').innerText = searchTerm;
+}
 
 if (searchTerm) {
     const searchResult = ArrayListProducts.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
     if (searchResult.length > 0) {
         ListSellingProducts(searchResult);
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchTerm = urlParams.get('searchTerm');
+            if (searchTerm) {
+                document.getElementById('search-result').innerText = `Kết quả tìm kiếm cho "${searchTerm}"`;
+            }
+        });
+        
     } else {
-        document.getElementById('item-selling-products').innerText = "Không tìm thấy kết quả phù hợp.";
+        displaySearchResultMessage("Không tìm thấy kết quả phù hợp.");
     }
 } else {
     ListSellingProducts(ArrayListProducts);
