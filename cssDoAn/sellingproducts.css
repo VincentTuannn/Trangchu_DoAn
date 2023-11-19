@@ -6,6 +6,11 @@
     padding: 30px 0px;
    
 }
+.selling-show-search h1{
+    text-align: center;
+    padding: 40px;
+}
+
 .container-search-products{
     background-color: white; 
     width: 85%;  
@@ -264,8 +269,9 @@
 /*CSS lọc sản phẩm*/
 .filterproducts{
     width: 85%;
-    background-color: red;
+    background-color: #66ccff8f;
     margin: auto;
+    margin-top: 35px;
 }
 .container-filter{
     display: flex;
@@ -317,6 +323,170 @@ li label{
     font-size: 14px;
 }
 
+/*CSS cho div gaming */
+.selling-show-gaming{
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+}
+
+.selling-products-gaming {
+    width: 98%;
+    position: relative; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-selling-products-gaming{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.item-show-gaming {
+    border: 1px solid rgb(222, 225, 230);
+    width: 19%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;  
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
+    overflow: hidden;
+}
 
 
+.item-show-gaming img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;   
+    transition: transform 1.6s ease;
+}
+.item-show-gaming img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
 
+
+/*CSS cho div doanh nhan*/
+.selling-show-doanhnhan{
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+}
+
+.selling-products-doanhnhan {
+    width: 98%;
+    position: relative; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-selling-products-doanhnhan{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.item-show-doanhnhan {
+    border: 1px solid rgb(222, 225, 230);
+    width: 19%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;  
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
+    overflow: hidden;
+}
+
+
+.item-show-doanhnhan img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;   
+    transition: transform 1.6s ease;
+}
+.item-show-doanhnhan img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+/*CSS cho div Đồ họa */
+.selling-show-dohoa{
+    width: 85%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+}
+
+.selling-products-dohoa {
+    width: 98%;
+    position: relative; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-selling-products-dohoa{
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.item-show-dohoa {
+    border: 1px solid rgb(222, 225, 230);
+    width: 19%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;  
+    margin: 10px 5px; /* Để có khoảng cách giữa các sản phẩm */
+    overflow: hidden;
+}
+
+
+.item-show-dohoa img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;   
+    transition: transform 1.6s ease;
+}
+.item-show-dohoa img:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+#filter-result{
+    font-size: 23px;
+}
+#message{
+    width: 85%;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    margin-left: 7.5%;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+#total-products-message{
+    background-color: #0000FF;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+}

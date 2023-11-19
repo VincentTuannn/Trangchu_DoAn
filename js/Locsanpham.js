@@ -1,4 +1,4 @@
-const ArrayListProductss = [
+const ArrayListProducts = [
     {
         img: "./image/selling-products.webp",
         name: "Laptop LG Gram 2023 14Z90R GAH53A5",
@@ -560,32 +560,98 @@ const ArrayListProductss = [
         labelonsale: "-21%"
     }
 ];   
+
 //Thêm mảng sản phẩm vào Local
-localStorage.setItem('ArrayListProductss', JSON.stringify(ArrayListProductss));
+localStorage.setItem('ArrayListProducts', JSON.stringify(ArrayListProducts));
 //
-/*Hàm gọi đến trang kết quả tìm kiếm*/ 
-function handleSearchFileresult() {
-    const searchTerm = document.getElementById('search').value;
-    filterValue1 = searchTerm.toString();
-    var filtertest1 = [];
+
+function handleeFilterFileresult(filterTerm) {
+    const filter = {
+        brand: null,
+        price: null,
+        cpu: null,
+        vga: null,
+        phanloai: null,
+    };
+    // Lấy giá trị từ thuộc tính 'value'
+    var filterValue = filterTerm.getAttribute('value');
+    filterValue = filterValue.toString();
+    //So sánh mảng các mục cần tìm
+    if (['1', '2', '3', '4'].includes(filterValue)) {
+        filter.price = filterValue;
+    } else if (['ASUS', 'ACER', 'MSI', 'LENOVO', 'DELL', 'HP', 'LG'].includes(filterValue)) {
+        filter.brand = filterValue;
+    }else if (['Intel Core i3', 'Intel Core i5', 'Intel Core i7', 'Intel Core i9', 'ADM Ryzen', 'Xeon'].includes(filterValue)) {
+        filter.cpu = filterValue;
+    }else if (['oldgaming', 'oldvanphong', 'new99', 'other','gaming', 'doanhnhan', 'dohoa'].includes(filterValue)) {
+        filter.phanloai = filterValue;
+    }
     // Thêm giá trị vào mảng filtertest
-    // Đã thêm vào local nên ẩn dòng này đi var filtertest = JSON.parse(localStorage.getItem('filtertest')) || [];
-    filtertest1.push(filterValue1);
-    localStorage.setItem('filtertest1', JSON.stringify(filtertest1));
-    window.location.href = `testketquatimkiem.html?searchTerm=${searchTerm}`;
+   //Đã thêm vào local nên ẩn dòng này đi var filtertest = JSON.parse(localStorage.getItem('filtertest')) || [];
+    filtertest.push(filterValue);
+    console.log(filtertest.length);
+    var index = filtertest.length;
+    if (index > 1) {
+        // Xóa phần tử đầu tiên khỏi mảng (vì chỉ cho mảng chứa 2 phần tử nên sẽ xóa phần tử đầu tiên)
+        filtertest.splice(0, 1);
+    }
+    //Cập nhật lại filtertest vào Local Storage sau khi đã xóa phần tử
+    localStorage.setItem('filtertest', JSON.stringify(filtertest));
+     // Lưu mảng filtertest vào localStorage
+     localStorage.setItem('filter', JSON.stringify(filter));
+     //Cập nhật lại filtertest vào Local Storage sau khi đã xóa phần tử
+     localStorage.setItem('filtertest', JSON.stringify(filtertest));
+      // Lưu mảng filtertest vào localStorage
+    //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('filtertest', JSON.stringify(filtertest));
+      // Lưu mảng storedArray vào localStorage
+    //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('ArrayListProducts', JSON.stringify(storedArray));
+     // Hiển thị giá trị filtertest trong console
+ 
+    console.log(filtertest);
+    console.log(storedArray);
+    // Chuyển hướng trang sau khi xử lý xong dữ liệu
+    window.location.href = `ResultSearch.html?filterTerm=${filterValue}`;
     return false; // Ngăn chặn việc gửi biểu mẫu
 }
 
+
 //Lấy giá trị mảng sản phẩm từ LocalStorage
-const storedJsonStringg = localStorage.getItem('ArrayListProductss');
+const storedJsonString = localStorage.getItem('ArrayListProducts');
 // Chuyển đổi chuỗi JSON thành mảng
-const storedArrays = JSON.parse(storedJsonStringg);
-function ListSellingProductss(storedArrays) {
+const storedArray = JSON.parse(storedJsonString);
+// Lấy giá trị filter từ localStorage
+const filtertest = JSON.parse(localStorage.getItem('filtertest'));
+//Lấy giá trị của hàm filter từ local
+const storedJsonfilterString = localStorage.getItem('filter');
+const filterarr = JSON.parse(storedJsonfilterString);
+
+ console.log(filtertest);
+// Gọi hàm ListSellingProducts với các filter
+ListSellingProducts(storedArray, filtertest);
+
+function ListSellingProducts(storedArray, filtertest = []) {
+    document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchTerm = urlParams.get('filterTerm');
+        const text = urlParams.innerText
+        console.log(text);
+        if (searchTerm === 'gaming') {
+            document.getElementById('filter-result').innerText = `Laptop Gaming"`;
+        }
+        if (searchTerm === 'doanhnhan') {
+            document.getElementById('filter-result').innerText = `Laptop Doanh nhân"`;
+        }
+        if (searchTerm === 'dohoa') {
+            document.getElementById('filter-result').innerText = `Laptop Thiết kế - Đồ họa`;
+        }
+        
+    });
     let s = `<div class="item-selling-products" id="item-selling-products">`;
-    for (let i = 0; i < storedArrays.length; i++) {
-        const product = storedArrays[i];
+    for (let i = 0; i < storedArray.length; i++) {
+        const product = storedArray[i];
         var anh = product.img;
         var thuonghieu = product.thuonghieu;
+        var phanloai = product.phanloai;
         var name = product.name;
         var cpu = product.cpu;
         var ram = product.ram;
@@ -595,6 +661,37 @@ function ListSellingProductss(storedArrays) {
         var pricecompare = product.pricecompare;
         var pricehighlight = product.pricehighlight;
         var labelonsale = product.labelonsale;
+
+        // Kiểm tra điều kiện lọc, nếu filterValue không rỗng thì thực hiện lọc
+        if(filterarr.brand){
+            if (!filtertest.includes(thuonghieu)) {
+                continue;
+            }
+        }
+         // Kiểm tra điều kiện lọc giá
+        if(filterarr.price)         //Dùng filtertest hay filterarr.{Gía trị cần lọc} đều được
+        {
+            if (pricehighlight < 10000000 && !filtertest.includes('1')) continue;
+            if (pricehighlight >= 10000000 && pricehighlight <= 15000000 && !filtertest.includes('2')) continue;
+            if (pricehighlight > 15000000 && pricehighlight <= 25000000 && !filtertest.includes('3')) continue;
+            if (pricehighlight > 25000000 && !filtertest.includes('4')) continue;
+        }
+        if (filterarr.cpu) {
+            if(!filtertest.includes(cpu))
+              continue;
+         }
+ 
+         if (filterarr.vga) {
+             if(filtervga.includes(vga) == false)
+               continue;
+          }
+        // Kiểm tra điều kiện lọc, nếu phanloai không rỗng và không nằm trong filtertest thì tiếp tục vòng lặp
+        if (filterarr.phanloai && !filtertest.includes(phanloai)) {
+            continue;
+}
+
+ 
+
 
         s += `
             <div class="item-show">
@@ -609,7 +706,7 @@ function ListSellingProductss(storedArrays) {
                         <div class="cpu">
                             <span>${cpu}</span>
                         </div>
-                        <div class="vga">
+                        <div class ="vga">
                             <span>${vga}</span>
                         </div>
                         <div class="ram">
@@ -627,10 +724,10 @@ function ListSellingProductss(storedArrays) {
                             <del>${pricecompare}</del>
                         </div>
                         <div class="price--default">
-                            <span class="price--highlight">${pricehighlight}</span>
+                            <span class="pricehighlight">${pricehighlight}</span>
                             <span class="label--on-sale">${labelonsale}</span>
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>`;
     }
@@ -639,29 +736,14 @@ function ListSellingProductss(storedArrays) {
     document.getElementById("item-selling-products").innerHTML = s;
 }
 
-const urlParams = new URLSearchParams(window.location.search);
-const searchTerm = urlParams.get('searchTerm');
 
-function displaySearchResultMessage(searchTerm) {
-    document.getElementById('search-result-message').innerText = searchTerm;
-}
 
-if (searchTerm) {
-    const searchResult = storedArrays.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
-    if (searchResult.length > 0) {
-        ListSellingProductss(searchResult);
 
-        // Hiển thị kết quả tìm kiếm
-        document.getElementById('search-result').innerText = `Kết quả tìm kiếm cho "${searchTerm}"`;
 
-        // Hiển thị tổng số sản phẩm
-        document.getElementById('total-products-message').innerText = `Sản phẩm (${searchResult.length})`;
-    } else {
-        displaySearchResultMessage("Không tìm thấy kết quả phù hợp.");
-    }
-} else {
-    ListSellingProductss(storedArrays);
 
-    // Hiển thị tổng số sản phẩm khi không có tìm kiếm
-    document.getElementById('total-products-message').innerText = `Tổng số sản phẩm: ${storedArrays.length}`;
-}
+
+
+
+
+
+

@@ -6,7 +6,7 @@
     <title>PAS Store</title>
     <script src="https://kit.fontawesome.com/ee40bf749e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./cssDoAn/list.css">
     <link rel="stylesheet" href="./cssDoAn/topheader.css">
     <link rel="stylesheet" href="./cssDoAn/bottomheader.css">
@@ -28,7 +28,7 @@
         <header>
             <div class="top_header">
                 <div class="logo-header">
-                    <a href="#">
+                    <a href="./Trangchu_DoAn.html">
                         <img width="240" height="80" src="./image/logo-removebg-preview.png" alt="logo">
                     </a>
                 </div>
@@ -401,32 +401,32 @@
                         <div class="menu-ncsd-content" id="list-nhucausudung">
                             <ul class="ncsd-container-ul">
                                 <li>
-                                    <a href="#">Hiệu năng - Gaming</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="gaming">Hiệu năng - Gaming</a>
                                 </li>
                                 <li>
-                                    <a href="#">Doanh nhân - Bền bỉ</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="doanhnhan">Doanh nhân - Bền bỉ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Đồ họa - thiết kế</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="dohoa">Đồ họa - thiết kế</a>
                                 </li>
                                 <li>
-                                    <a href="#">Văn phòng - học tập</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="vanphong">Văn phòng - học tập</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="menu-dqsd-content" id="list-daquasudung">
                             <ul class="dqsd-container-ul">
                                 <li>
-                                    <a href="#">Laptop Gaming cũ</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="oldgaming">Laptop Gaming cũ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Laptop văn phòng cũ</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="oldvanphong">Laptop văn phòng cũ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Laptop new 99%</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="new99">Laptop new 99%</a>
                                 </li>
                                 <li>
-                                    <a href="#">Laptop cũ khác</a>
+                                    <a href="#" onclick="handleeFilterFileresult(this)" value="other">Laptop cũ khác</a>
                                 </li>
                             </ul>
                         </div>
@@ -523,8 +523,8 @@
             <div class="item-banner-bottom">
                 <div class="container">
                     <div class="box-item-show">
-                        <a href="#">
-                            <img src="./image/itembannerbottom.webp" alt="">
+                        <a href="#" onclick="handleeFilterFileresult(this)" value="gaming">
+                            <img src="./image/itembannerbottom.webp" alt="Hiệu năng - Gaming">
                         </a>
                     </div>
                     <div class="box-item-show">
@@ -635,6 +635,288 @@
                     </div>
                 </div>
                 <div id="pagenumber" style="clear: both;" align="center">
+                </div>
+            </div>
+            <!--Laptop Gaming-->
+            <div class="selling-show-gaming" id="selling-show-gaming">
+                <div class="border-title-selling">
+                    <div class="title-selling">
+                        <div class="laptop-banchay">
+                            <a href="#">
+                                <p>Laptop Gaming</p>
+                            </a>
+                        </div>
+                        <hr class="title-divider">
+                        <div class="mienphi-giaohang">
+                            <i class="fa fa-truck" aria-hidden="true" id="icon"></i>
+                            <p>Miễn phí giao hàng</p>
+                        </div>
+                        <div class="list-tenhang">
+                            <div>
+                                <a href="#">
+                                  <p>Acer</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Asus</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Lenovo</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Dell</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                <p>Hewlett-Packard</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>MSI</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Apple</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="selling-products-gaming">
+                    <div class="item-selling-products-gaming" id="item-selling-products-gaming">
+                        <div class="item-show-gaming"> <!--Có thể xóa phần này-->
+                            <a href="#">
+                                <img src="./image/selling-products.webp">
+                            </a>
+                            <div class="detial">
+                                <h3 class="name-product">
+                                    <a id="name" href="#">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                </h3>
+                                <div class="technical">
+                                    <div class="cpu">
+                                        <span>i5-1340P</span>
+                                    </div>
+                                    <div class="vga">
+                                        <span>Onboard</span>
+                                    </div>
+                                    <div class="ram">
+                                        <span>16 GB</span>
+                                    </div>
+                                    <div class="ssd">
+                                        <span>256 GB</span>
+                                    </div>
+                                    <div class="lcd">
+                                        <span>14 inch FHD+ IPS</span>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <div class="price--compare"><del>32.490.000₫</del></div>
+                                    <div class="price--default">
+                                        <span class="price--highlight">25.490.000₫</span>
+                                        <span class="label--on-sale">-21%</span>			
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div id="pagenumber2" style="clear: both;" align="center">
+                    
+                </div>
+            </div>
+            <!--Laptop Doanh Nhân-->
+            <div class="selling-show-doanhnhan" id="selling-show-doanhnhan">
+                <div class="border-title-selling">
+                    <div class="title-selling">
+                        <div class="laptop-banchay">
+                            <a href="#">
+                                <p>Laptop Doanh nhân</p>
+                            </a>
+                        </div>
+                        <hr class="title-divider">
+                        <div class="mienphi-giaohang">
+                            <i class="fa fa-truck" aria-hidden="true" id="icon"></i>
+                            <p>Miễn phí giao hàng</p>
+                        </div>
+                        <div class="list-tenhang">
+                            <div>
+                                <a href="#">
+                                  <p>Acer</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Asus</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Lenovo</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Dell</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                <p>Hewlett-Packard</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>MSI</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Apple</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="selling-products-doanhnhan">
+                    <div class="item-selling-products-doanhnhan" id="item-selling-products-doanhnhan">
+                        <div class="item-show-doanhnhan"> <!--Có thể xóa phần này-->
+                            <a href="#">
+                                <img src="./image/selling-products.webp">
+                            </a>
+                            <div class="detial">
+                                <h3 class="name-product">
+                                    <a id="name" href="#">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                </h3>
+                                <div class="technical">
+                                    <div class="cpu">
+                                        <span>i5-1340P</span>
+                                    </div>
+                                    <div class="vga">
+                                        <span>Onboard</span>
+                                    </div>
+                                    <div class="ram">
+                                        <span>16 GB</span>
+                                    </div>
+                                    <div class="ssd">
+                                        <span>256 GB</span>
+                                    </div>
+                                    <div class="lcd">
+                                        <span>14 inch FHD+ IPS</span>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <div class="price--compare"><del>32.490.000₫</del></div>
+                                    <div class="price--default">
+                                        <span class="price--highlight">25.490.000₫</span>
+                                        <span class="label--on-sale">-21%</span>			
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div id="pagenumber3" style="clear: both;" align="center"></div>
+            </div>
+            <!--Laptop Đồ Họa-->
+            <div class="selling-show-dohoa" id="selling-show-dohoa">
+                <div class="border-title-selling">
+                    <div class="title-selling">
+                        <div class="laptop-banchay">
+                            <a href="#">
+                                <p>Laptop Thiết kế - Đồ họa/p>
+                            </a>
+                        </div>
+                        <hr class="title-divider">
+                        <div class="mienphi-giaohang">
+                            <i class="fa fa-truck" aria-hidden="true" id="icon"></i>
+                            <p>Miễn phí giao hàng</p>
+                        </div>
+                        <div class="list-tenhang">
+                            <div>
+                                <a href="#">
+                                  <p>Acer</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Asus</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Lenovo</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Dell</p>
+                                  </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                <p>Hewlett-Packard</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>MSI</p>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <p>Apple</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="selling-products-dohoa">
+                    <div class="item-selling-products-dohoa" id="item-selling-products-dohoa">
+                        <div class="item-show-dohoa"> <!--Có thể xóa phần này-->
+                            <a href="#">
+                                <img src="./image/selling-products.webp">
+                            </a>
+                            <div class="detial">
+                                <h3 class="name-product">
+                                    <a id="name" href="#">Laptop LG Gram 2023 14Z90R GAH53A5</a>
+                                </h3>
+                                <div class="technical">
+                                    <div class="cpu">
+                                        <span>i5-1340P</span>
+                                    </div>
+                                    <div class="vga">
+                                        <span>Onboard</span>
+                                    </div>
+                                    <div class="ram">
+                                        <span>16 GB</span>
+                                    </div>
+                                    <div class="ssd">
+                                        <span>256 GB</span>
+                                    </div>
+                                    <div class="lcd">
+                                        <span>14 inch FHD+ IPS</span>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <div class="price--compare"><del>32.490.000₫</del></div>
+                                    <div class="price--default">
+                                        <span class="price--highlight">25.490.000₫</span>
+                                        <span class="label--on-sale">-21%</span>			
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div id="pagenumber4" style="clear: both;" align="center">
                     
                 </div>
             </div>
@@ -644,17 +926,17 @@
         <div style="clear: both; height: 120px; background-color: beige;">FOOTER
         </div>
     </div>
-    <!--JavaScript--> 
-    
     <script src="./js/login_header.js"></script>
     <script src="./js/cart_header.js"></script>
     <script src="./js/listactive.js"></script> 
     <script src="./js/listdaquasudung.js"></script>
-    <script src="./js/testjsloc.js"></script>
+<!--    <script src="./js/ArrayListProducts.js"></script>  -->
+    <script src="./js/Locsanpham.js"></script>
     <script src="./js/ListSearchProducts.js"></script>
     <script src="./js/ListFilterProducts.js"></script>
+    <script src="./js/gaming.js"></script>
     <script src="./js/phantrang.js"></script>
-    <script src="./js/ArrayListProducts.js"></script>
+    
     <script></script>
 </body>
 </html>
