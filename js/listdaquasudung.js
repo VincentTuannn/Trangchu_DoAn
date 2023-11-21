@@ -1,4 +1,4 @@
-
+//Di chuyến chuột vào sẽ hiện ra div menu
 // Laptop
 var daquasudung = document.getElementById('daquasudung');
 var menudqsd = document.getElementById('list-daquasudung');

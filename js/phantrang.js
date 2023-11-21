@@ -68,22 +68,11 @@ function renderPagination(items, paginationContainer) {
 }
 
 
-
-// Ví dụ sử dụng cho item-show
-const items = document.getElementsByClassName('item-show');
-const paginationContainer = document.getElementById('pagenumber');
-showPage(items, paginationContainer);
-
-// Ví dụ sử dụng cho item-show-gaming
-const items2 = document.getElementsByClassName('item-show-gaming');
-const paginationContainer2 = document.getElementById('pagenumber2');
-showPage(items2, paginationContainer2);
-// Ví dụ sử dụng cho item-show-doanhnhan
-const items3 = document.getElementsByClassName('item-show-doanhnhan');
-const paginationContainer3 = document.getElementById('pagenumber3');
-showPage(items3, paginationContainer3);
-
-// Ví dụ sử dụng cho item-show-dohoa
-const items4 = document.getElementsByClassName('item-show-dohoa');
-const paginationContainer4 = document.getElementById('pagenumber4');
-showPage(items3, paginationContainer4);
+// Ví dụ sử dụng cho LỌC
+var itemfiltter = document.querySelectorAll(".item-show-filter");
+var paginationContainerfilter = document.getElementById('pagenumber2');
+showPage(itemfiltter, paginationContainerfilter);
+// Ví dụ sử dụng cho TÌM KIẾM
+var itemsearch = document.querySelectorAll(".item-show");
+var paginationContainersearch = document.getElementById('pagenumber6');
+showPage(itemsearch, paginationContainersearch);

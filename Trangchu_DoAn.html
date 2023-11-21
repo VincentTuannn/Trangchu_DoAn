@@ -236,18 +236,19 @@
                                 </a>
                             </li> 
                             <li class="MenuC" id="laptop">
-                                <a class="list-menu-leftshow">
-                                    <span class="box-icon" id=""> 
-                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">                             
+                                <a class="list-menu-leftshow" onclick="handleeFilterFileresult(this)" value="'Laptop">
+                                    <span class="box-icon">
+                                        <img width="24" height="24" src="./image/giohang.png" alt="Giỏ hàng">
                                     </span>
-                                    <p id="menuright_bottom-laptop" class="box-text">Laptop</p> 
+                                    <p id="menuright_bottom-laptop" class="box-text">Laptop</p>
                                     <span class="megamenu-ic-right">
                                         <svg viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1.5 1.5L4.5 4L1.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg>
                                     </span>
-                                </a> 
+                                </a>
                             </li>
+                            
                             <li class="MenuC">
                                 <a class="list-menu-leftshow">
                                     <span class="box-icon" id=""> 
@@ -598,7 +599,7 @@
                 </div>
                 <div class="selling-products">
                     <div class="item-selling-products" id="item-selling-products">
-                        <div class="item-show"> <!--Có thể xóa phần này-->
+                        <div class="item-show-search"> <!--Có thể xóa phần này-->
                             <a href="#">
                                 <img src="./image/selling-products.webp">
                             </a>
@@ -634,7 +635,7 @@
                         </div>    
                     </div>
                 </div>
-                <div id="pagenumber" style="clear: both;" align="center">
+                <div id="testpage" style="clear: both;" align="center">
                 </div>
             </div>
             <!--Laptop Gaming-->
@@ -728,8 +729,7 @@
                         </div>    
                     </div>
                 </div>
-                <div id="pagenumber2" style="clear: both;" align="center">
-                    
+                <div id="pagenumber" style="clear: both;" align="center"> 
                 </div>
             </div>
             <!--Laptop Doanh Nhân-->
@@ -930,12 +930,12 @@
     <script src="./js/cart_header.js"></script>
     <script src="./js/listactive.js"></script> 
     <script src="./js/listdaquasudung.js"></script>
-<!--    <script src="./js/ArrayListProducts.js"></script>  -->
     <script src="./js/Locsanpham.js"></script>
     <script src="./js/ListSearchProducts.js"></script>
+    <script src="./js/phantrang.js"></script>
     <script src="./js/ListFilterProducts.js"></script>
     <script src="./js/gaming.js"></script>
-    <script src="./js/phantrang.js"></script>
+   
     
     <script></script>
 </body>

@@ -1,12 +1,14 @@
-/*Nhận giá trị từ localStorage
-const storedJsonString = localStorage.getItem('ArrayListProducts');
-const storedArray = JSON.parse(storedJsonString);
-*/
+//Lấy giá trị mảng sản phẩm từ LocalStorage
+const mangdaloc = localStorage.getItem('filteredProducts');
+// Chuyển đổi chuỗi JSON thành mảng
+const mang = JSON.parse(mangdaloc);
+console.log(mang);
+
 
 function ListSellingProducts(filterthuonghieu = [], filtergiaban = [], filtercpu = [], filtervga = []) {
     let s = `<div class="item-selling-products" id="item-selling-products">`;
-    for (let i = 0; i < storedArray.length; i++) {
-        const product = storedArray[i];
+    for (let i = 0; i < mang.length; i++) {
+        const product = mang[i];
         var anh = product.img;
         var thuonghieu = product.thuonghieu;
         var name = product.name;
@@ -44,8 +46,9 @@ function ListSellingProducts(filterthuonghieu = [], filtergiaban = [], filtercpu
         if(filterthuonghieu.length > 0 || filtergiaban.length > 0 || filtercpu.length > 0 || filtergiaban.length > 0)
         textss = document.getElementById('filter-result');
         textss.innerHTML = "Laptop";
+       
         s += `
-            <div class="item-show">
+            <div class="item-show-filter" id="item-show">
                 <a href="#">
                     <img src="${anh}" width="100%"/>
                 </a>
@@ -82,22 +85,13 @@ function ListSellingProducts(filterthuonghieu = [], filtergiaban = [], filtercpu
                 </div>
             </div>`;
     }
-
+  
     s += `</div>`;
     document.getElementById("item-selling-products").innerHTML = s;
 }
 
 const urlParams = new URLSearchParams(window.location.search);
 const filterTerm = urlParams.get('Filter');
-/* Hàm thêm tag filter */
-function addFilterTag(category, values) {
-    const selectedFilters = document.getElementById('result-filter-full');
-    const li = document.createElement('li');
-    li.innerHTML = `<strong>${category}:</strong> ${values.join(', ')} <button onclick="removeFilter('${category}')">X</button>`;
-    selectedFilters.appendChild(li);
-}
-
-
 
 function filteritem() {
     var arrthuonghieu = document.getElementsByClassName("thuonghieu");
@@ -129,44 +123,32 @@ function filteritem() {
     ListSellingProducts(filterthuonghieu,filtergiaban, filtercpu, filtervga);  
 
     console.log(filterthuonghieu);
-    // Lưu trạng thái checkbox vào localStorage
-    localStorage.setItem('filterthuonghieu', JSON.stringify(filterthuonghieu));
-    localStorage.setItem('filtergiaban', JSON.stringify(filtergiaban));
-    localStorage.setItem('filtercpu', JSON.stringify(filtercpu));
-    localStorage.setItem('filtervga', JSON.stringify(filtervga));
-
-    // Hiển thị các thẻ filter đã chọn
-    displaySelectedFilters();
+    console.log(filtergiaban);
 }
 
-/* Hàm hiển thị các thẻ filter đã chọn */
-function displaySelectedFilters() {
-    // Lấy các giá trị filter từ localStorage
-    const storedFilterThuongHieu = JSON.parse(localStorage.getItem('filterthuonghieu')) || [];
-    const storedFilterGiaBan = JSON.parse(localStorage.getItem('filtergiaban')) || [];
-    const storedFilterCpu = JSON.parse(localStorage.getItem('filtercpu')) || [];
-    const storedFilterVga = JSON.parse(localStorage.getItem('filtervga')) || [];
 
-    // Hiển thị các thẻ filter đã chọn nếu có ít nhất một filter được chọn
-    const selectedFilters = document.getElementById('result-filter-full');
-    selectedFilters.innerHTML = '';
-    if (storedFilterThuongHieu.length > 0) addFilterTag("Thương hiệu", storedFilterThuongHieu);
-    if (storedFilterGiaBan.length > 0) addFilterTag("Lọc giá", storedFilterGiaBan);
-    if (storedFilterCpu.length > 0) addFilterTag("CPU", storedFilterCpu);
-    if (storedFilterVga.length > 0) addFilterTag("VGA", storedFilterVga);
-}
-/* Hàm xóa filter theo category */
-function removeFilter(category) {
-    // Xóa filter từ localStorage
-    localStorage.removeItem('filter' + category.toLowerCase());
 
-    // Gọi lại hàm hiển thị các filter đã chọn
-    displaySelectedFilters();
 
-    // Gọi lại hàm lọc sản phẩm để cập nhật kết quả lọc
-    filteritem();
-    ListSellingProducts();
+//Mảng giá trị lọc
+// Tạo một mảng để lưu trữ thông tin từ các phần tử
+//Lấy giá trị mảng sản phẩm từ LocalStorage
+/// Lấy dữ liệu từ local storage và chuyển đổi thành đối tượng JavaScript
+ brandarray = JSON.parse(localStorage.getItem('brandarray'));
+console.log(brandarray);
+var listbrandfilter = `<ul id="listthuonghieu-checkbox" class="listcheckbox">`;
+// Kiểm tra xem filtertest có tồn tại và có chứa ít nhất một phần tử không
+for(var i=0; i< brandarray.length; i++) {
+    // Tạo chuỗi HTML cho danh sách các thương hiệu
+    console.log(brandarray[i]);
+    listbrandfilter += `
+        <li>
+            <label id="label-item-search">
+                <input type="checkbox" onchange="filteritem()" class="thuonghieu" value="${brandarray[i]}">${brandarray[i]}
+            </label>
+        </li>`;
+        listbrandfilter += `</ul>`;
+
+    // Gán chuỗi HTML vào một phần tử có id="listthuonghieu-checkbox"
+    document.getElementById('listthuonghieu-checkbox').innerHTML = listbrandfilter;
 }
 
-// Gọi hàm hiển thị các filter đã chọn khi trang được tải
-displaySelectedFilters();

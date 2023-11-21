@@ -1,4 +1,4 @@
-
+//Di chuyến chuột vào sẽ hiện ra div menu
 // Laptop
 var laptop = document.getElementById('laptop');
 var menulaptop = document.getElementById('list-laptop');

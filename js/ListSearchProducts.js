@@ -581,7 +581,7 @@ const storedJsonStringg = localStorage.getItem('ArrayListProductss');
 // Chuyển đổi chuỗi JSON thành mảng
 const storedArrays = JSON.parse(storedJsonStringg);
 function ListSellingProductss(storedArrays) {
-    let s = `<div class="item-selling-products" id="item-selling-products">`;
+    let s = '';
     for (let i = 0; i < storedArrays.length; i++) {
         const product = storedArrays[i];
         var anh = product.img;
@@ -597,7 +597,7 @@ function ListSellingProductss(storedArrays) {
         var labelonsale = product.labelonsale;
 
         s += `
-            <div class="item-show">
+            <div class="item-show" id="item-show">
                 <a href="#">
                     <img src="${anh}" width="100%"/>
                 </a>
@@ -634,8 +634,6 @@ function ListSellingProductss(storedArrays) {
                 </div>
             </div>`;
     }
-
-    s += `</div>`;
     document.getElementById("item-selling-products").innerHTML = s;
 }
 

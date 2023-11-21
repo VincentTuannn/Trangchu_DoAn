@@ -564,7 +564,6 @@ const ArrayListProducts = [
 //Thêm mảng sản phẩm vào Local
 localStorage.setItem('ArrayListProducts', JSON.stringify(ArrayListProducts));
 //
-
 function handleeFilterFileresult(filterTerm) {
     const filter = {
         brand: null,
@@ -582,12 +581,13 @@ function handleeFilterFileresult(filterTerm) {
     } else if (['ASUS', 'ACER', 'MSI', 'LENOVO', 'DELL', 'HP', 'LG'].includes(filterValue)) {
         filter.brand = filterValue;
     }else if (['Intel Core i3', 'Intel Core i5', 'Intel Core i7', 'Intel Core i9', 'ADM Ryzen', 'Xeon'].includes(filterValue)) {
-        filter.cpu = filterValue;
+        filter.cpu = filterValue;   
     }else if (['oldgaming', 'oldvanphong', 'new99', 'other','gaming', 'doanhnhan', 'dohoa'].includes(filterValue)) {
         filter.phanloai = filterValue;
     }
-    // Thêm giá trị vào mảng filtertest
-   //Đã thêm vào local nên ẩn dòng này đi var filtertest = JSON.parse(localStorage.getItem('filtertest')) || [];
+    //Chọn ra phần tử lọc thương hiệu
+    const brandarray = filter.brand ? [filter.brand] : ['ASUS', 'ACER', 'MSI', 'LENOVO', 'DELL', 'HP', 'LG'];
+    localStorage.setItem('brandarray', JSON.stringify(brandarray));
     filtertest.push(filterValue);
     console.log(filtertest.length);
     var index = filtertest.length;
@@ -601,34 +601,28 @@ function handleeFilterFileresult(filterTerm) {
      localStorage.setItem('filter', JSON.stringify(filter));
      //Cập nhật lại filtertest vào Local Storage sau khi đã xóa phần tử
      localStorage.setItem('filtertest', JSON.stringify(filtertest));
-      // Lưu mảng filtertest vào localStorage
-    //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('filtertest', JSON.stringify(filtertest));
-      // Lưu mảng storedArray vào localStorage
-    //Đã thêm vào local nên ẩn dòng này đi  localStorage.setItem('ArrayListProducts', JSON.stringify(storedArray));
-     // Hiển thị giá trị filtertest trong console
- 
+    // Hiển thị giá trị filtertest trong console
     console.log(filtertest);
     console.log(storedArray);
     // Chuyển hướng trang sau khi xử lý xong dữ liệu
     window.location.href = `ResultSearch.html?filterTerm=${filterValue}`;
     return false; // Ngăn chặn việc gửi biểu mẫu
 }
-
-
 //Lấy giá trị mảng sản phẩm từ LocalStorage
 const storedJsonString = localStorage.getItem('ArrayListProducts');
 // Chuyển đổi chuỗi JSON thành mảng
 const storedArray = JSON.parse(storedJsonString);
-// Lấy giá trị filter từ localStorage
+// Lấy giá trị filtertest từ localStorage
 const filtertest = JSON.parse(localStorage.getItem('filtertest'));
+//Lấy giá trị brandaray từ local
+brandarray = JSON.parse(localStorage.getItem('brandarray'));
 //Lấy giá trị của hàm filter từ local
 const storedJsonfilterString = localStorage.getItem('filter');
 const filterarr = JSON.parse(storedJsonfilterString);
 
  console.log(filtertest);
-// Gọi hàm ListSellingProducts với các filter
+// Gọi hàm ListSellingProducts với các filtertest
 ListSellingProducts(storedArray, filtertest);
-
 function ListSellingProducts(storedArray, filtertest = []) {
     document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
@@ -646,6 +640,7 @@ function ListSellingProducts(storedArray, filtertest = []) {
         }
         
     });
+    let filteredProducts = []; 
     let s = `<div class="item-selling-products" id="item-selling-products">`;
     for (let i = 0; i < storedArray.length; i++) {
         const product = storedArray[i];
@@ -688,13 +683,11 @@ function ListSellingProducts(storedArray, filtertest = []) {
         // Kiểm tra điều kiện lọc, nếu phanloai không rỗng và không nằm trong filtertest thì tiếp tục vòng lặp
         if (filterarr.phanloai && !filtertest.includes(phanloai)) {
             continue;
-}
+         }
 
- 
-
-
+         filteredProducts.push(product);
         s += `
-            <div class="item-show">
+            <div class="item-show-filter" id="item-show">
                 <a href="#">
                     <img src="${anh}" width="100%"/>
                 </a>
@@ -734,8 +727,9 @@ function ListSellingProducts(storedArray, filtertest = []) {
 
     s += `</div>`;
     document.getElementById("item-selling-products").innerHTML = s;
+    localStorage.setItem('filteredProducts', JSON.stringify(filteredProducts));
+    
 }
-
 
 
 
