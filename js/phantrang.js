@@ -35,6 +35,11 @@ function showPage(items, paginationContainer) {
 
 // Hàm tạo và hiển thị các nút phân trang
 function renderPagination(items, paginationContainer) {
+     // Kiểm tra xem paginationContainer tồn tại
+    if (!paginationContainer) {
+        console.error("Pagination container is not found!");
+        return;
+    }
     // Tính tổng số phần tử
     const totalItems = items.length;
     // Tính tổng số trang
@@ -71,8 +76,16 @@ function renderPagination(items, paginationContainer) {
 // Ví dụ sử dụng cho LỌC
 var itemfiltter = document.querySelectorAll(".item-show-filter");
 var paginationContainerfilter = document.getElementById('pagenumber2');
-showPage(itemfiltter, paginationContainerfilter);
+try {
+    showPage(itemfiltter, paginationContainerfilter);
+} catch (error) {
+    console.error("Error while showing page:", error);
+}
 // Ví dụ sử dụng cho TÌM KIẾM
 var itemsearch = document.querySelectorAll(".item-show");
 var paginationContainersearch = document.getElementById('pagenumber6');
-showPage(itemsearch, paginationContainersearch);
+try {
+    showPage(itemsearch, paginationContainersearch);
+} catch (error) {
+    console.error("Error while showing page:", error);
+}
